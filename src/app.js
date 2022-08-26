@@ -4,7 +4,7 @@ import { BackgroundModule } from './modules/background.module';
 
 const contextMenu = new ContextMenu('.menu');
 const background = new BackgroundModule('test', 'test');
-contextMenu.add(background, background2);
+contextMenu.add(background);
 document.body.addEventListener('contextmenu', event => {
   event.preventDefault();
   contextMenu.open(event);
