@@ -1,11 +1,9 @@
-import './styles.css';
-import { ContextMenu } from './menu';
-import { BackgroundModule } from './modules/background.module';
+import "./styles.css";
+import { ContextMenu } from "./menu";
 
-const contextMenu = new ContextMenu('.menu');
-const background = new BackgroundModule('test', 'test');
-contextMenu.add(background, background2);
-document.body.addEventListener('contextmenu', event => {
-  event.preventDefault();
-  contextMenu.open(event);
+const contextMenu = new ContextMenu(".menu");
+contextMenu.add();
+document.body.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+    contextMenu.open(event);
 });
