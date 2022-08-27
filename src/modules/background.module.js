@@ -9,5 +9,5 @@ export class BackgroundModule extends Module {
     }
     document.body.style.backgroundColor = color;
     return color;
-  }
+  } 
 }
