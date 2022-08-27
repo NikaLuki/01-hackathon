@@ -3,12 +3,16 @@ import { Menu } from './core/menu';
 export class ContextMenu extends Menu {
   constructor(selector) {
     super(selector);
+    this.addedModules = [];
+    this.el.addEventListener('click', event => {
+      this.startModule(event);
+    });
   }
 
   add(...modules) {
     for (const module of modules) {
       this.el.insertAdjacentHTML('beforeend', module.toHTML());
-      module.addEventListener('click', module.trigger());
+      this.addedModules.push(module);
     }
   }
   open(event) {
@@ -27,5 +31,15 @@ export class ContextMenu extends Menu {
   }
   close() {
     this.el.classList.remove('open');
+  }
+  startModule(event) {
+    if (event.target.className === 'menu-item')
+      console.log(event.target.dataset.type);
+
+    this.addedModules
+      .find(module => {
+        return module.type === event.target.dataset.type;
+      })
+      .trigger();
   }
 }
