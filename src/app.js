@@ -2,7 +2,6 @@ import './styles.css';
 import { ContextMenu } from './menu';
 import { BackgroundModule } from './modules/background.module';
 import {TimerModule} from './modules/taymer.module'
-import { random } from './utils';
 
 const contextMenu = new ContextMenu('.menu');
 const background = new BackgroundModule('test', 'test');
@@ -15,5 +14,5 @@ document.body.addEventListener('contextmenu', event => {
   
 });
        
-taymer.trigger()
+
       

@@ -2,15 +2,13 @@ import {Module} from '../core/module'
 
 export class TimerModule extends Module {
     trigger(){
-        const text = document.querySelector(`[data-type ="text"]`)
-        text.addEventListener('click', event=>{
-          
-          
-          setInterval(updateCountDown, 1000)
+       
+          const itemId = setInterval(updateCountDown, 1000)
           let time = Number(prompt('задайте время в секундах'))
-        let paragropth = document.querySelector('#count')
+        let paragropth = document.createElement('div')
+        document.body.append(paragropth)
         
-        function updateCountDown(){
+        function  updateCountDown(){
           time = time < 10 ? '0' + time: time;
         paragropth.innerHTML= time
           time--;
@@ -18,10 +16,18 @@ export class TimerModule extends Module {
             time = 0
             paragropth.innerHTML = 'Таймер окончен'
           }
+          setTimeout(()=>{
+            clearInterval(itemId)
+            if(paragropth.innerHTML === 'Таймер окончен'){
+                paragropth.remove()
+            }
+          },2000)
         }
        
-        })
+      
             
         
         }
+        
     }
+    
