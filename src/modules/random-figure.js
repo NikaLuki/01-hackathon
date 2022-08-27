@@ -5,13 +5,10 @@ import {getRandomColor} from '../utils';
 
 export class RandomFigure extends Module{
     trigger(){
-       const modulseRandomFigure = document.querySelector('[data-type="random-figure"]');
-       modulseRandomFigure.addEventListener('click', (event)=>{        
-        createDivFigure(); // функция которая создает фигуру и удаляет её через 3 секунды        
-       })    
+        createDivFigure();  
     }
 }
-
+// функция которая создает див
 const createDivFigure = () =>{
     const divFigure = document.createElement('div');
     divFigure.classList.add('figure');
