@@ -2,6 +2,7 @@ import {Module} from '../core/module'
 
 export class TimerModule extends Module {
     trigger(){
+
         const form = document.createElement('form')
         form.className = 'forma'
           
@@ -52,6 +53,7 @@ export class TimerModule extends Module {
                   
                 }      
             }
+
 
         
         }
