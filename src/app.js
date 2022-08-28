@@ -7,6 +7,7 @@ import { TimerModule } from './modules/taymer.module';
 import { QuotesSeries } from './modules/quotes-series'
 import { Calculator } from './modules/calculator'
 
+
 const contextMenu = new ContextMenu('.menu');
 const background = new BackgroundModule('test', 'test');
 const randomFrigure = new RandomFigure('random-figure', 'Случайная фигура')
@@ -20,26 +21,9 @@ contextMenu.add(randomFrigure);
 contextMenu.add(timerModule)
 contextMenu.add(quotesSeries)
 contextMenu.add(calculator)
+
 document.body.addEventListener('contextmenu', event => {
   event.preventDefault();
   contextMenu.open(event);
+  
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
