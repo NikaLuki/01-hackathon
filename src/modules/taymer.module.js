@@ -20,12 +20,12 @@ export class TimerModule extends Module {
           
           
             document.querySelector('button').onclick = function(){
-              const formTeg = document.querySelector('.forma')
-              formTeg.style.display = 'none'
+             
               let time = document.querySelector('#col').value 
                let paragropth = document.createElement('div')
                 paragropth.className = 'count'
                 document.body.append(paragropth)
+                form.remove()
                 const itemId = setInterval(updateCountDown, 1000)
                 function  updateCountDown(){   
                   
