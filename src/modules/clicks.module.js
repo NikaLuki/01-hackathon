@@ -18,32 +18,37 @@ export class ClicksModule extends Module {
           btn.addEventListener('click', counter)
           btn.addEventListener('dblclick',dobleCounter)
 
-          const createModalWindow = document.createElement('div')
-          createModalWindow.classList.add('modal')
-          const createSecondSectionWindow = document.createElement('div')
-          createSecondSectionWindow.classList.add('modal-content')
-          const createClosestButton = document.createElement('span')
-          createClosestButton.classList.add('close')
-          createClosestButton.innerText = ('x')
-          const createTitleContent  = document.createElement('p')
-          createTitleContent.classList.add('title-content')
-          createModalWindow.append(createSecondSectionWindow)
-          createSecondSectionWindow.append(createClosestButton)
-          createSecondSectionWindow.append(createTitleContent)
+          const popup = document.createElement('div')
+          const popupBody = document.createElement('div')
+          const popupContent = document.createElement('div')
+          const popupText = document.createElement('div')
+          const popupClose = document.createElement('span')
+          popupClose.classList.add('popup-close')
+          popupText.classList.add('popup-text')
+          popupContent.classList.add('popup-content')
+          popupBody.classList.add('popup-body')
+          popup.classList.add('popup')
+
+          popup.append(popupBody)
+          popupBody.append(popupContent)
+          popupContent.append(popupClose,popupText)
+          popupClose.innerText = ('X')
           
           
           
-            
          
 
           setTimeout(()=>{
-            document.body.append(createModalWindow)
-            createClosestButton.onclick = function(){
-              createModalWindow.style.display = 'none'
+            document.body.append(popup)
+            popup.style.visibility = 'visible'
+            popup.style.opacity = 1
+            popupClose.onclick = function(){
+              popup.style.visibility = 'hidden'
+              popup.style.opacity = 0
             }
             btn.removeEventListener('click',counter)
             btn.removeEventListener('dblclick',dobleCounter)
-            createTitleContent.innerText = (`Количество одинарных кликов: ${clickCount}
+            popupText.innerText = (`Количество одинарных кликов: ${clickCount}
             Количество двойных кликов: ${dobleClick}
               `)
               
