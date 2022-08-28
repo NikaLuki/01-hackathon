@@ -16,6 +16,7 @@ export class TimerModule extends Module {
           input.id = 'col'
           document.body.append(form)
           
+           
           
           
             document.querySelector('button').onclick = function(){
@@ -32,7 +33,7 @@ export class TimerModule extends Module {
                   let secund = Math.floor(time%60)
                   secund = secund < 10 ? '0' + secund: secund;
                   minut = minut < 10 ? '0' + minut : minut;
-                paragropth.innerHTML= `${minut}:${secund}`
+                  paragropth.innerHTML= `${minut}:${secund}`
                   time--;
                   if(time < 0){
                     time = 0
