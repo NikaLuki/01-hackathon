@@ -25,7 +25,7 @@ const patternHTML = `<div class="calculator">
 <div class="flex_number">
     <div class="operand">*</div>
     <div class="operand">/</div>
-    <div class="operand">.</div>              
+    <div class="num">.</div>              
 </div>  
 <div class="result_sum">=</div>
 </div>`
