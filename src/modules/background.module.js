@@ -10,6 +10,6 @@ export class BackgroundModule extends Module {
       }
       document.body.style.backgroundColor = color;
       return color;
-    }, 5000);
+    }, 4000);
   }
 }
