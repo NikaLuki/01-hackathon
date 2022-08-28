@@ -17,7 +17,7 @@ export class BackgroundModule extends Module {
                 inputColor.min = 0;
                 inputColor.max = 255;
                 inputColor.value = rgb[0];
-                document.body.append(inputColor);
+                document.body.insertAdjacentElement("afterbegin", inputColor);
             } else {
                 const inputColor = document.querySelector(".form__range");
                 inputColor.value = rgb[0];
