@@ -35,6 +35,10 @@ export function getWindow(text){
             popupClose.onclick = function(){
               popup.style.visibility = 'hidden'
               popup.style.opacity = 0
+              setTimeout(()=>{
+              popup.remove()
+              },1000)
             }
+            
             popupText.innerText = text
 }
