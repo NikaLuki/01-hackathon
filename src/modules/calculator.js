@@ -33,7 +33,9 @@ const patternHTML = `<div class="calculator">
 
 export class Calculator extends Module {
     trigger() {
-        const divCalculator = document.createElement("div");
+        if(!document.querySelector('.container-calculator')){
+            const divCalculator = document.createElement("div");
+        divCalculator.classList.add('container-calculator')
         divCalculator.innerHTML = patternHTML;
         document.body.append(divCalculator);
         const calculator = document.querySelector(".calculator");
@@ -102,5 +104,7 @@ export class Calculator extends Module {
 
             sum = 0;
         });
+        }
+        
     }
 }
